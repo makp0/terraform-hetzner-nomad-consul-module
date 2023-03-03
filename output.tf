@@ -14,7 +14,7 @@ output "server_info" {
 
 output "nomad_token" {
 #  depends_on = [data.local_file.nomad_token]
-  value = try(trimspace(file("${path.root}/certs/nomad_token")),  "Could not find nomad token file from initial bootstrap. If this is your initial apply, please create a GitHub issue.")
+  value = try(trimspace(file("certs/nomad_token")),  "Could not find nomad token file from initial bootstrap. If this is your initial apply, please create a GitHub issue.")
 #  value = data.local_file.nomad_token.content
 }
 

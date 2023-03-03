@@ -8,7 +8,8 @@ output "server_info" {
 }
 
 output "nomad_token" {
-  value = try(trimspace(file("${path.root}/certs/nomad_token")),  "Could not find nomad token file from initial bootstrap. If this is your initial apply, please create a GitHub issue.")
+#  value = try(trimspace(file("${path.root}/certs/nomad_token")),  "Could not find nomad token file from initial bootstrap. If this is your initial apply, please create a GitHub issue.")
+  value = file("${path.root}/certs/nomad_token")
 }
 
 output "nomad_address" {
